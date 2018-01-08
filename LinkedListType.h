@@ -12,7 +12,11 @@ protected:
 private:
 	void CopyList(const LinkedListType<Type>&otherlist)
 	{
+		NodeType *Temp;
+		while (first != last)
+		{
 
+		}
 	}
 public:
 		const LinkedListType<Type>&operator=(const LinkedListType&other)
@@ -64,12 +68,11 @@ public:
 	//then delete the referenced temp.
 	void DestroyList()
 	{
-		NodeType *Temp;
+		NodeType*current;
 		while (first != last)
 		{
-			*Temp = first;
-			first = link;
-			delete *Temp;
+			current = first;
+			~current;
 		}
 	};
 	//Function to return the last element of the list.
@@ -90,12 +93,17 @@ public:
 	{
 
 	}
+	//in
 	virtual void InsertFirst(const Type&newItem)const
 	{
+		NodeType  info;
+		info = first;
 
 	}
 	virtual void  InsertLast(const Type&newItem)const
 	{
+		NodeType info;
+		info = last;
 
 	}
 };
