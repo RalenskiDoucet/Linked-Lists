@@ -1,7 +1,9 @@
 #pragma once
 #include "Linked Lists Iterator .h"
 #include"NodeType.h"
-template<typename NodeType>
+#include <cstddef>
+
+template <class Type>
 class LinkedListType
 {
 
@@ -12,11 +14,11 @@ protected:
 private:
 	void CopyList(const LinkedListType<Type>&otherlist)
 	{
-		NodeType *Temp;
-		while (first != last)
-		{
-
-		}
+		NodeType<Type> list1;
+		list1.link->info;
+		NodeType<Type>list2;
+		isEmpty(list2);
+		list2.link->list1->info;
 	}
 public:
 		const LinkedListType<Type>&operator=(const LinkedListType&other)
@@ -41,7 +43,7 @@ public:
 		{
 			return true;
 		}
-		else (first != NULL)
+		else (first != NULL);
 		{
 			return false;
 		}
@@ -68,12 +70,10 @@ public:
 	//then delete the referenced temp.
 	void DestroyList()
 	{
-		NodeType*current;
-		while (first != last)
-		{
-			current = first;
-			~current;
-		}
+		NodeType<Type>*current;
+		*current->link->first;
+		delete *current;
+
 	};
 	//Function to return the last element of the list.
 	//precondition the list must exist and must not be empty
@@ -93,17 +93,18 @@ public:
 	{
 
 	}
-	//in
+
 	virtual void InsertFirst(const Type&newItem)const
 	{
-		NodeType  info;
-		info = first;
+		NodeType<Type> *current;
+		current->link;
+		first = current;
 
 	}
 	virtual void  InsertLast(const Type&newItem)const
 	{
-		NodeType info;
-		info = last;
-
+		NodeType<Type> *current;
+		current->link;
+		last = current;
 	}
 };
