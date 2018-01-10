@@ -91,20 +91,22 @@ public:
 	}
 	virtual bool Search(const Type&SearchItem)const
 	{
+		NodeType<Type> result;
+		count();
 
 	}
 
 	virtual void InsertFirst(const Type&newItem)const
 	{
-		NodeType<Type> *current;
-		current->link;
-		first = current;
+		NodeType<Type> *newNode;
+		newNode->link->current;
+		first = newNode;
 
 	}
 	virtual void  InsertLast(const Type&newItem)const
 	{
-		NodeType<Type> *current;
-		current->link;
-		last = current;
+		NodeType<Type> *newNode;
+		newNode->link->current;
+		last = *newNode;
 	}
 };
