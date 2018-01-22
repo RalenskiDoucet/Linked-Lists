@@ -1,33 +1,11 @@
 ﻿  Main.cpp
-c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\nodetype.h(6): error C2079: 'NodeType<Type>::info' uses undefined class 'Type'
+c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\linkedlisttype.h(139): error C3423: Use of incomplete type 'Type'
+  c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\main.cpp(5): note: see declaration of 'Type'
+  c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\linkedlisttype.h(137): note: while compiling class template member function 'void LinkedListType<Type>::InsertLast(const Type &) const'
           with
           [
               Type=Type
           ]
-  c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\linkedlisttype.h(109): note: see reference to class template instantiation 'NodeType<Type>' being compiled
-          with
-          [
-              Type=Type
-          ]
-  c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\linkedlisttype.h(107): note: while compiling class template member function 'void LinkedListType<Type>::InsertLast(const Type &) const'
-          with
-          [
-              Type=Type
-          ]
-  c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\main.cpp(5): note: see reference to class template instantiation 'LinkedListType<Type>' being compiled
-c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\linkedlisttype.h(109): error C2039: 'current': is not a member of 'NodeType<Type>'
-          with
-          [
-              Type=Type
-          ]
-  c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\linkedlisttype.h(12): note: see declaration of 'NodeType<Type>'
-          with
-          [
-              Type=Type
-          ]
-c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\linkedlisttype.h(110): error C2440: '=': cannot convert from 'NodeType<Type>' to 'NodeType<Type> *const '
-          with
-          [
-              Type=Type
-          ]
-  c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\linkedlisttype.h(110): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\main.cpp(11): note: see reference to class template instantiation 'LinkedListType<Type>' being compiled
+c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\linkedlisttype.h(141): error C3490: 'last' cannot be modified because it is being accessed through a const object
+c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\linkedlisttype.h(145): error C3490: 'first' cannot be modified because it is being accessed through a const object

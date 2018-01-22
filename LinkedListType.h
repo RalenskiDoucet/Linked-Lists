@@ -3,7 +3,7 @@
 #include"NodeType.h"
 #include <cstddef>
 
-template <class Type>
+template < class Type>
 class LinkedListType
 {
 
@@ -14,16 +14,28 @@ protected:
 private:
 	void CopyList(const LinkedListType<Type>&otherlist)
 	{
-		NodeType<Type> list1;
-		list1.link->info;
-		NodeType<Type>list2;
-		isEmpty(list2);
-		list2.link->list1->info;
+		NodeType<Type>*tempNode;
+		NodeType<Type>*current;
+		tempNode = current;
+		current = otherlist.first;
+		first = tempNode;
+		last = tempNode;
+		InsertFirst(current->info);
+		current = current->link;
+		while(current!='\0')
+		{
+			InsertLast(current->info);
+			current = current->link;
+		}
 	}
 public:
 		const LinkedListType<Type>&operator=(const LinkedListType&other)
 	{
-
+		if (first == other.first)
+			{
+				CopyList();
+			}
+		return first;
 	};
 	//intialize the list to an empty state.
 	//postcondition first=NULL count =0.
@@ -31,6 +43,7 @@ public:
 
 	void InitilizeList()
 	{
+		while(first!='\0')
 		DestroyList();
 	};
 	//conditional statement that tells if the list empty.
@@ -52,7 +65,9 @@ public:
 	//postcondition the value of fount is returned.
 	void Print()const
 	{
-
+		NodeType<Type> *current;
+		current->link->info;
+		std::cout <<"current";
 	};
 	//iterates through list.
 	//returns the amount of nodes in the list.
@@ -80,33 +95,55 @@ public:
 	//post condition if the list is empty
 	Type Front()const
 	{
-		return last;
+		(first != NULL);
+		return first;
 	}
 	//Function to return the first element of the list.
 	//precondition the list must exist and must not be empty
 	//post condition if the list is empty
 	Type Back()const
 	{
-		return first;
+		(last!=NULL);
+		return last;
 	}
-	virtual bool Search(const Type&SearchItem)const
+	virtual bool Search(const Type&other)const
 	{
-		NodeType<Type> result;
-		count();
+		NodeType<Type> *result=new NodeType<Type>;
+		while(first !='\0')
+		{
+			result = first->link;
+			if(result->info!=other)
+			{
+				return true;
+			}
+			return false;
+		}
+	}
+
+	virtual void InsertFirst(const Type&other)const
+	{
+		NodeType<Type> *tempNode = new NodeType<Type>;
+		tempNode->info = other;
+		tempNode->link = first;
+		first = tempNode;
+		if (count==0)
+		{
+			last = first;
+		}
+
 
 	}
-
-	virtual void InsertFirst(const Type&newItem)const
+	virtual void  InsertLast(const Type&other)const
 	{
-		NodeType<Type> *newNode;
-		newNode->link->current;
-		first = newNode;
+		NodeType<Type> *tempNode = new NodeType<Type>;
+		tempNode->info = other;
+		last->link = tempNode;
+		last=tempNode;
+		last->link = NULL;
+		if (count == 0)
+		{
+			first = last;
+		}
+	}
 
-	}
-	virtual void  InsertLast(const Type&newItem)const
-	{
-		NodeType<Type> *newNode;
-		newNode->link->current;
-		last = *newNode;
-	}
 };
