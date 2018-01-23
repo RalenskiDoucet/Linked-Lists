@@ -1,5 +1,7 @@
 #pragma once
 #include"NodeType.h"
+#include "LinkedListsIterator.h"
+
 template < class Type>
 class LinkedListType
 {
@@ -84,7 +86,6 @@ public:
 		NodeType<Type>*current;
 		*current->link->first;
 		delete *current;
-
 	};
 	//Function to return the last element of the list.
 	//precondition the list must exist and must not be empty
@@ -138,4 +139,18 @@ public:
 			first = last;
 		}
 	}
+	Type Begin(LinkedListdIterator<Type>&other)
+	{
+		LinkedListdIterator<Type> *tempNode;
+		tempNode->current = first;
+		return first;
+	}
+	Type End(LinkedListdIterator<Type>&other)
+	{
+		LinkedListdIterator<Type>*tempNode;
+		tempNode->current = last;
+		return last;
+
+	}
+
 };
