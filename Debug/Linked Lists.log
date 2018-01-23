@@ -1,11 +1,2 @@
-﻿  Main.cpp
-c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\linkedlisttype.h(139): error C3423: Use of incomplete type 'Type'
-  c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\main.cpp(5): note: see declaration of 'Type'
-  c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\linkedlisttype.h(137): note: while compiling class template member function 'void LinkedListType<Type>::InsertLast(const Type &) const'
-          with
-          [
-              Type=Type
-          ]
-  c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\main.cpp(11): note: see reference to class template instantiation 'LinkedListType<Type>' being compiled
-c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\linkedlisttype.h(141): error C3490: 'last' cannot be modified because it is being accessed through a const object
-c:\users\s178029\documents\visual studio 2015\projects\linked lists\linked lists\linkedlisttype.h(145): error C3490: 'first' cannot be modified because it is being accessed through a const object
+﻿  Linked Lists.vcxproj -> C:\Users\s178029\documents\visual studio 2015\Projects\Linked Lists\Debug\Linked Lists.exe
+  Linked Lists.vcxproj -> C:\Users\s178029\documents\visual studio 2015\Projects\Linked Lists\Debug\Linked Lists.pdb (Partial PDB)

@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Linked Lists Iterator .h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="NodeType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LinkedListType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedListsIterator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

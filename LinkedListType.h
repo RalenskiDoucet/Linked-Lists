@@ -1,8 +1,5 @@
 #pragma once
-#include "Linked Lists Iterator .h"
 #include"NodeType.h"
-#include <cstddef>
-
 template < class Type>
 class LinkedListType
 {
@@ -52,11 +49,11 @@ public:
 	//else if first is not NULL return false.
 	bool isEmpty()const
 	{
-		if (first = NULL)
+		if (first != '\0')
 		{
 			return true;
 		}
-		else (first != NULL);
+		else (first != '\0');
 		{
 			return false;
 		}
@@ -67,7 +64,7 @@ public:
 	{
 		NodeType<Type> *current;
 		current->link->info;
-		std::cout <<"current";
+		std::cout <<info;
 	};
 	//iterates through list.
 	//returns the amount of nodes in the list.
@@ -75,7 +72,6 @@ public:
 	{
 		return count;
 	};
-
 	//function to delete all the nodes from the list.
 	//postcondition first =NULL count =0.
 	//made a temp node.
@@ -95,7 +91,7 @@ public:
 	//post condition if the list is empty
 	Type Front()const
 	{
-		(first != NULL);
+		(first != '\0');
 		return first;
 	}
 	//Function to return the first element of the list.
@@ -103,7 +99,7 @@ public:
 	//post condition if the list is empty
 	Type Back()const
 	{
-		(last!=NULL);
+		(last!='\0');
 		return last;
 	}
 	virtual bool Search(const Type&other)const
@@ -119,8 +115,7 @@ public:
 			return false;
 		}
 	}
-
-	virtual void InsertFirst(const Type&other)const
+	virtual void InsertFirst( const Type&other)
 	{
 		NodeType<Type> *tempNode = new NodeType<Type>;
 		tempNode->info = other;
@@ -130,20 +125,17 @@ public:
 		{
 			last = first;
 		}
-
-
 	}
-	virtual void  InsertLast(const Type&other)const
+	virtual void InsertLast(const Type& other)
 	{
-		NodeType<Type> *tempNode = new NodeType<Type>;
+		NodeType<Type> *tempNode = new NodeType<Type>();
 		tempNode->info = other;
 		last->link = tempNode;
 		last=tempNode;
-		last->link = NULL;
+		last->link = '\0';
 		if (count == 0)
 		{
 			first = last;
 		}
 	}
-
 };
