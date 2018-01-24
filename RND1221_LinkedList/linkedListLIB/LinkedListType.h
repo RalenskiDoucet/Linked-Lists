@@ -53,6 +53,7 @@ public:
 			return false;
 		}
 	};
+	
 	void Print()const//function to return the nodes in the list.
 	{
 		NodeType<Type> *current=first;
@@ -63,11 +64,20 @@ public:
 		std::cout << current->info<<std::endl;
 		current = current->link;
 	};
+	
+	
 	int Lenght()//iterates through list.//returns the amount of nodes in the list.
 	{
 		return count;
 	};
-	void DestroyList()//function to delete all the nodes from the list.//postcondition first =NULL count =0.//made a temp node.//used a while for while first is not equal to last.//referenced the temp node to assign the temp to first.//then assigned first to link.//then delete the referenced temp.
+	//function to delete all the nodes from the list.
+	//postcondition first =NULL count =0.
+	//made a temp node.
+	//used a while for while first is not equal to last.
+	//referenced the temp node to assign the temp to first.
+	//then assigned first to link.
+	//then delete the referenced temp.
+	void DestroyList()
 	{
 		NodeType<Type>*current;
 		while (first != NULL)
@@ -79,12 +89,18 @@ public:
 		last = '\0';
 		count = 0;
 	};
-	Type Front()const//Function to return the last element of the list.//precondition the list must exist and must not be empty//post condition if the list is empty
+	//Function to return the last element of the list.
+	//precondition the list must exist and must not be empty
+	//post condition if the list is empty
+	Type Front()const
 	{
 		(first != '\0');
 		return first;
 	}
-	Type Back()const//Function to return the first element of the list.//precondition the list must exist and must not be empty//post condition if the list is empty
+	//Function to return the first element of the list.
+	//precondition the list must exist and must not be empty
+	//post condition if the list is empty
+	Type Back()const
 	{
 		(last!='\0');
 		return last;

@@ -28,6 +28,9 @@ public:
 
 		return this->current->info;
 	};
+
+
+
 	bool operator==(const LinkedListIterator<Type>&right)const//return true if iterator is equal.//by right otherwise it returns false.
 	{
 		return true this->current == right->current;
