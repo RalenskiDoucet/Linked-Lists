@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include"NodeType.h"
 #include "LinkedListsIterator.h"
 
@@ -36,20 +37,12 @@ public:
 			}
 		return first;
 	};
-	//intialize the list to an empty state.
-	//postcondition first=NULL count =0.
-	//called DestroyList function to initlize the list
-
-	void InitilizeList()
+	void InitilizeList()//intialize the list to an empty state.//postcondition first=NULL count =0.//postcondition first=NULL count =0.
 	{
-		while(first!='\0')
+		while(first!=NULL)
 		DestroyList();
 	};
-	//conditional statement that tells if the list empty.
-	//check if first is NULL
-	//if first is NULL return true.
-	//else if first is not NULL return false.
-	bool isEmpty()const
+	bool isEmpty()const//conditional statement that tells if the list empty.//check if first is NULL//if first is NULL return true.//else if first is not NULL return false.
 	{
 		if (first != '\0')
 		{
@@ -60,17 +53,20 @@ public:
 			return false;
 		}
 	};
-	//function to return the node in the list.
-	//postcondition the value of fount is returned.
-	void Print()const
+	
+	void Print()const//function to return the nodes in the list.
 	{
-		NodeType<Type> *current;
+		NodeType<Type> *current=first;
+		if(current!=NULL)
+		{
+		}
 		current->link->info;
-		std::cout <<info;
+		std::cout << current->info<<std::endl;
+		current = current->link;
 	};
-	//iterates through list.
-	//returns the amount of nodes in the list.
-	int Lenght()
+	
+	
+	int Lenght()//iterates through list.//returns the amount of nodes in the list.
 	{
 		return count;
 	};
@@ -84,8 +80,14 @@ public:
 	void DestroyList()
 	{
 		NodeType<Type>*current;
-		*current->link->first;
-		delete *current;
+		while (first != NULL)
+		{
+			current = first;
+			first = first->link;
+			delete current;
+		}
+		last = '\0';
+		count = 0;
 	};
 	//Function to return the last element of the list.
 	//precondition the list must exist and must not be empty
@@ -103,7 +105,7 @@ public:
 		(last!='\0');
 		return last;
 	}
-	virtual bool Search(const Type&other)const
+	virtual bool Search(const Type&other)const// A function that searches the list for a match and returns true if a match is found and false if a match is not found.
 	{
 		NodeType<Type> *result=new NodeType<Type>;
 		while(first !='\0')
@@ -116,7 +118,7 @@ public:
 			return false;
 		}
 	}
-	virtual void InsertFirst( const Type&other)
+	virtual void InsertFirst( const Type&other)// a function that adds a new first node to the list
 	{
 		NodeType<Type> *tempNode = new NodeType<Type>;
 		tempNode->info = other;
@@ -126,10 +128,11 @@ public:
 		{
 			last = first;
 		}
+		count++;
 	}
-	virtual void InsertLast(const Type& other)
+	virtual void InsertLast(const Type& other)// a function that adds a new last node to the list
 	{
-		NodeType<Type> *tempNode = new NodeType<Type>();
+		NodeType<Type> *tempNode = new NodeType<Type>;
 		tempNode->info = other;
 		last->link = tempNode;
 		last=tempNode;
@@ -138,16 +141,17 @@ public:
 		{
 			first = last;
 		}
+		count++;
 	}
-	Type Begin(LinkedListdIterator<Type>&other)
+	Type Begin(LinkedListIterator<Type>&other)// a function that indacates the begining of the list
 	{
-		LinkedListdIterator<Type> *tempNode;
+		LinkedListIterator<Type> *tempNode;
 		tempNode->current = first;
 		return first;
 	}
-	Type End(LinkedListdIterator<Type>&other)
+	Type End(LinkedListIterator<Type>&other)// a functin that indacates the endding of the list
 	{
-		LinkedListdIterator<Type>*tempNode;
+		LinkedListIterator<Type>*tempNode;
 		tempNode->current = last;
 		return last;
 

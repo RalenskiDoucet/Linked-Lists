@@ -1,43 +1,44 @@
 #pragma once
 #include "NodeType.h"
 template <class Type>
-class LinkedListdIterator
+class LinkedListIterator
 {
 private:
 	NodeType<Type>*current;
 public:
-	//default construct.
-	//postcondition current NULL.
-	LinkedListdIterator()
+	LinkedListIterator()// sets current equal to NULL.
 	{
-		Type Node;
+		current = NULL;
 	};
-	//consturctor with a parameter.
-	//postcondition current ptr.
-	LinkedListdIterator(NodeType<Type>)
+
+
+	LinkedListIterator(NodeType<Type>*ptr)//Sets current equal to ptr.
 	{
-		Type *Node;
+		current = ptr;
 	};
+	LinkedListIterator<Type>operator++()//the iterator is advanced to the next node.
+	{
+
+		return this ->current = current->link;
+	}
 	//function to overload the prre-increment operator.
 	//post condition the iterator is advanced to the next node.
-	Type operator*()
+	LinkedListIterator<Type> *operator*()
 	{
-		Type Node1;
-		Type Node2;
-	return Node1 * Node2;
+
+		return this->current->info;
 	};
-	//Overload the is equal operator.
-	//postcondition return true if iterator is equal.
-	//by right otherwise it returns false.
-	bool operator==(const LinkedListdIterator<Type>&right)const
+
+
+
+	bool operator==(const LinkedListIterator<Type>&right)const//return true if iterator is equal.//by right otherwise it returns false.
 	{
-		return true this->Type == Type.right;
+		return true this->current == right->current;
 	}
-	//overload the not equal operator
-	//postcondition return true if the iterator is not equal;
-	//by right otherwise it returns false.
-	bool operator!=(const LinkedListdIterator<Type>&right)const
+
+
+	bool operator!=(const LinkedListIterator<Type>&right)const//return true if the iterator is not equal.//by right otherwise it returns false.
 	{
-		return true this->Type != Type.right;
+		return true this->current != right->current;
 	}
 };

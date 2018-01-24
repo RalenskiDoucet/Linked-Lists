@@ -2,6 +2,6 @@
 template<typename Type>
 struct NodeType
 {
-	Type *info;
+	Type info;
 	NodeType<Type>*link;
 };
