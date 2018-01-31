@@ -9,33 +9,16 @@ class LinkedListType
 
 protected:
 	int count;
-	NodeType<Type>*first;
-	NodeType<Type>*last;
-private:
-	void CopyList(const LinkedListType<Type>&otherlist)
-	{
-		NodeType<Type>*tempNode;
-		NodeType<Type>*current;
-		tempNode = current;
-		current = otherlist.first;
-		first = tempNode;
-		last = tempNode;
-		InsertFirst(current->info);
-		current = current->link;
-		while(current!='\0')
-		{
-			InsertLast(current->info);
-			current = current->link;
-		}
-	}
+	NodeType<Type>*first;//1st Node in the list.
+	NodeType<Type>*last;//Last Node in the list.
+
 public:
-		const LinkedListType<Type>&operator=(const LinkedListType&other)
+		const LinkedListType<Type>&operator=(const LinkedListType&other)//overload the assignment operator.
 	{
 		if (first == other.first)
-			{
 				CopyList();
-			}
-		return first;
+		else
+			return first;
 	};
 	void InitilizeList()//intialize the list to an empty state.//postcondition first=NULL count =0.//postcondition first=NULL count =0.
 	{
@@ -79,6 +62,30 @@ public:
 		last = '\0';
 		count = 0;
 	};
+	void DeleteNode(const Type&other)
+	{
+		NodeType<Type>*current = new NodeType<Type>;
+		NodeType<Type>*nextNode = new NodeType<Type>;
+		if (first->info=other)
+		{
+			current = first;
+			first = first->link;
+			delete current;
+			 count--;
+			 return;
+		}
+		current = first->link;
+		while(first!='\0')
+			if(current->link->info==other)
+			{
+				NodeType<Type>*tempNode = current->link;
+				current->link = tempNode->link;
+				delete tempNode;
+				count--;
+				return;
+			}
+		current = current->link;
+	}
 	Type Front()const//Function to return the last element of the list.//precondition the list must exist and must not be empty//post condition if the list is empty
 	{
 		(first != '\0');
@@ -140,5 +147,30 @@ public:
 		return last;
 
 	}
+	LinkedListType(const LinkedListType<Type>&other)
+	{
+
+	}
+	~LinkedListType()
+	{
+
+	}
+	private:
+		void CopyList(const LinkedListType<Type>&otherlist)
+		{
+			NodeType<Type>*tempNode;
+			NodeType<Type>*current;
+			tempNode = current;
+			current = otherlist.first;
+			first = tempNode;
+			last = tempNode;
+			InsertFirst(current->info);
+			current = current->link;
+			while (current != '\0')
+			{
+				InsertLast(current->info);
+				current = current->link;
+			}
+		}
 
 };

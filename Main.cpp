@@ -1,17 +1,18 @@
 #include<iostream>
 #include "LinkedListsIterator.h"
 #include "LinkedListType.h"
-#include <assert.h>
 void main()
 {
-	NodeType<int> a;
-	NodeType<int> b;
-	NodeType<int> c;
-	LinkedListIterator<int> iterator = LinkedListIterator<int>(&a);
+	NodeType<int>*a = new NodeType<int>{ 40 };
+	NodeType<int>b={};
+	NodeType<int>c={120};
+	a->link = &b;
+	b.link = &c;
+	c.link = NULL;
+	LinkedListIterator<int> iterator =  LinkedListIterator<int>(a);
 	iterator.operator++();
 	LinkedListType<int>*ListNum1 = new LinkedListType<int>();
 	LinkedListType<int>*ListNum2 = new LinkedListType<int>();
-
 	ListNum1->InsertFirst(1);
 	ListNum1->InsertLast(15);
 	ListNum1->Print();
